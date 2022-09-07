@@ -1,1 +1,1 @@
-# Feedback-Prize-Effective-Arguments (Part of 7th place solution)
+# Feedback-Prize-Effective-Arguments
