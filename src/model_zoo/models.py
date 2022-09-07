@@ -17,10 +17,6 @@ class FeedbackModel(nn.Module):
         super().__init__()
         self.pretrained_path = pretrained_path
         self.config = AutoConfig.from_pretrained(model_name, output_hidden_states=True) if not config_path else torch.load(config_path)
-        self.backbone = AutoModel.from_pretrained(model_name) if not config_path else AutoModel.from_config(self.config)
-        
-        if use_gradient_checkpointing:
-            self.backbone.gradient_checkpointing_enable()
 
         self.use_dropout = use_dropout
         if not self.use_dropout:
@@ -30,6 +26,13 @@ class FeedbackModel(nn.Module):
                                     "attention_probs_dropout_prob": 0.0,
                                 }
                                     )
+
+        self.backbone = AutoModel.from_pretrained(model_name,config=self.config) if not config_path else AutoModel.from_config(self.config)
+        
+        if use_gradient_checkpointing:
+            self.backbone.gradient_checkpointing_enable()
+
+        
         self.dropout = nn.Dropout(self.config.hidden_dropout_prob)
         self.fc = nn.Linear(self.config.hidden_size, num_labels)
 
