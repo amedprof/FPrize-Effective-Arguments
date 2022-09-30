@@ -1,5 +1,5 @@
 # 2nd place solution in the Efficiency Track
-## Kaggle Feedback Prize - Predicting Effective Arguments
+## Feedback Prize - Predicting Effective Arguments
 
 Competition Link: https://www.kaggle.com/competitions/feedback-prize-effectiveness/overview
 
