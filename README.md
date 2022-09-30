@@ -1,9 +1,11 @@
 # 2nd place solution in the Efficiency Track
 ## Kaggle Feedback Prize - Predicting Effective Arguments
 
-We followed a multi-stage approach to training the winning model, so the exact score may be hard to reproduce. I will highlight below the key elements of the solution:
+Competition Link: https://www.kaggle.com/competitions/feedback-prize-effectiveness/overview
 
-MLM pre-training: notebooks/HF-pret-7.py
-1st stage models: notebooks/HF-43.ipynb
-2nd stage model distillation on pseudolabels: notebooks/HF-56-pseudolabels.ipynb
-2nd stage model finetuning: notebooks/HF-43pseudo2.ipynb
+Solution summary Link: https://www.kaggle.com/competitions/feedback-prize-effectiveness/discussion/347891 
+
+1. Download competition data and extract it in the data folder
+2. MLM pre-training: notebook/MLM Amed.ipynb
+3. PSL Training: notebook/training-psl.ipynb 
+4. Inference script: src/script_inference/*
